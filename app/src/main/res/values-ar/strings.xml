@@ -7,11 +7,5 @@
     <string name="kuwait">الكويت</string>
 
 
-    <string-array name="countries" translatable="false" >
-        <item>@string/egypt</item>
-        <item>@string/saudiarabia</item>
-        <item>@string/emirates</item>
-        <item>@string/kuwait</item>
-    </string-array>
 
 </resources>

@@ -2,12 +2,12 @@
 <resources>
 
     <style name="arabic_font_style">
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">26sp</item>
         <item name="android:fontFamily">@font/tajawalbold</item>
     </style>
 
     <style name="english_font_style">
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">26sp</item>
         <item name="android:fontFamily">@font/galanogrotesquebold</item>
     </style>
 
