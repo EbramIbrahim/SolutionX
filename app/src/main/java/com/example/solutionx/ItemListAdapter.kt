@@ -1,6 +1,5 @@
 package com.example.solutionx
 
-import android.annotation.SuppressLint
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,6 +7,7 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.solutionx.data.Countries
 import com.example.solutionx.databinding.ItemListBinding
+import java.util.Locale
 
 open class ItemListAdapter(val countries: List<Countries>) :
     RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
@@ -18,7 +18,6 @@ open class ItemListAdapter(val countries: List<Countries>) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(countries: Countries, position: Int) {
-            binding.tvCountry.text = countries.name
             countries.isSelected = position == selectedItem
             binding.root.setOnClickListener {
                 if (adapterPosition != RecyclerView.NO_POSITION) {
@@ -47,6 +46,16 @@ open class ItemListAdapter(val countries: List<Countries>) :
     }
 
     open fun onBind(countries: Countries, binding: ItemListBinding, isSelected: Boolean) {
+        binding.tvCountry.text = countries.name
+        val appLanguage = Locale.getDefault().language
+        Logger.log(LoggerType.D(Constant.TAG, appLanguage))
+
+        if (appLanguage == "English"){
+            binding.tvCountry.setTextAppearance(R.style.english_font_style)
+        } else {
+            binding.tvCountry.setTextAppearance(R.style.arabic_font_style)
+        }
+
         if (isSelected) {
             binding.tvCountry.setTextColor(Color.BLUE)
             binding.checkMark.isVisible = true

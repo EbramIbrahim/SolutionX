@@ -17,8 +17,27 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    flavorDimensions "logger_flavor"
+    productFlavors {
+        logCat {
+            dimension "logger_flavor"
+            buildConfigField "boolean", "LOG_TO_LOGCAT", "true"
+        }
+
+        logWriter {
+            dimension "logger_flavor"
+            buildConfigField "boolean", "LOG_TO_FILE", "true"
+        }
+
+        production {
+            dimension "logger_flavor"
+            buildConfigField "boolean", "LOG_DISABLED", "true"
+        }
+    }
+
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
 
     buildTypes {
