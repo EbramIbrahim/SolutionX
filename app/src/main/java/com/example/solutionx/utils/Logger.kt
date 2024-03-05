@@ -1,7 +1,8 @@
-package com.example.solutionx
+package com.example.solutionx.utils
 
 import android.os.Environment
 import android.util.Log
+import com.example.solutionx.BuildConfig
 import java.io.File
 
 object Logger {

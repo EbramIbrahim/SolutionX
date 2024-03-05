@@ -1,4 +1,4 @@
-package com.example.solutionx
+package com.example.solutionx.utils
 
 object Constant {
 

@@ -1,15 +1,19 @@
-package com.example.solutionx
+package com.example.solutionx.adapter
 
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import com.example.solutionx.R
 import com.example.solutionx.data.Countries
 import com.example.solutionx.databinding.ItemListBinding
+import com.example.solutionx.utils.Constant
+import com.example.solutionx.utils.Logger
+import com.example.solutionx.utils.LoggerType
 import java.util.Locale
 
-open class ItemListAdapter(val countries: List<Countries>) :
+open class ItemListAdapter(private val countries: List<Countries>) :
     RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
 
     private var selectedItem = RecyclerView.NO_POSITION
@@ -30,7 +34,6 @@ open class ItemListAdapter(val countries: List<Countries>) :
 
     }
 
-
     open override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         return ItemViewHolder(
             ItemListBinding.inflate(
@@ -45,6 +48,7 @@ open class ItemListAdapter(val countries: List<Countries>) :
         holder.bind(countries[position], position)
     }
 
+    // I can Inherit this method and apply different models with same layout
     open fun onBind(countries: Countries, binding: ItemListBinding, isSelected: Boolean) {
         binding.tvCountry.text = countries.name
         val appLanguage = Locale.getDefault().language
@@ -67,6 +71,7 @@ open class ItemListAdapter(val countries: List<Countries>) :
         }
     }
 
+    //notify the adapter with current and previous selected item
     private fun selectItem(position: Int) {
         val previousSelectedPosition = selectedItem
         selectedItem = position

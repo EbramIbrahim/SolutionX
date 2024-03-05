@@ -5,7 +5,7 @@
     <string name="emirates">Emirates</string>
     <string name="kuwait">Kuwait</string>
 
-    <string-array name="countries" translatable="false" >
+    <string-array name="countries" translatable="false">
         <item>@string/egypt</item>
         <item>@string/saudiarabia</item>
         <item>@string/emirates</item>
