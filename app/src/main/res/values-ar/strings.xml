@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">SolutionX</string>
-    <string name="egypt">Egypt</string>
-    <string name="saudiarabia">Saudi Arabia</string>
-    <string name="emirates">Emirates</string>
-    <string name="kuwait">Kuwait</string>
+    <string name="egypt">مصر</string>
+    <string name="saudiarabia">السعودية</string>
+    <string name="emirates">الامارات</string>
+    <string name="kuwait">الكويت</string>
+
 
     <string-array name="countries" translatable="false" >
         <item>@string/egypt</item>
