@@ -2,20 +2,20 @@ package com.example.solutionx.filter_screen
 
 import android.graphics.Color
 import androidx.core.view.isVisible
+import com.example.solutionx.ModelShare
 import com.example.solutionx.utils.Constant
 import com.example.solutionx.adapter.ItemListAdapter
 import com.example.solutionx.utils.Logger
 import com.example.solutionx.utils.LoggerType
-import com.example.solutionx.R
-import com.example.solutionx.data.Countries
+import com.example.solutionx.data.Filter
 import com.example.solutionx.databinding.ItemListBinding
 import java.util.Locale
 
-class FilterChild(private val filters: List<Countries>) : ItemListAdapter(filters) {
+class FilterChild(filters: List<Filter>) : ItemListAdapter(filters) {
 
 
-    override fun onBind(countries: Countries, binding: ItemListBinding, isSelected: Boolean) {
-        binding.tvCountry.text = countries.name
+    override fun onBind(model: ModelShare, binding: ItemListBinding, isSelected: Boolean) {
+        binding.tvCountry.text = model.name
         val appLanguage = Locale.getDefault().language
         Logger.log(LoggerType.D(Constant.TAG, appLanguage))
 
@@ -28,6 +28,6 @@ class FilterChild(private val filters: List<Countries>) : ItemListAdapter(filter
             binding.checkMark.isVisible = false
             binding.itemList.setBackgroundColor(Color.WHITE)
         }
-
     }
+
 }

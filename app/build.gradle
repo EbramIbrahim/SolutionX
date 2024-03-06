@@ -17,7 +17,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    flavorDimensions "logger_flavor"
+    flavorDimensions += "logger_flavor"
     productFlavors {
         logCat {
             dimension "logger_flavor"

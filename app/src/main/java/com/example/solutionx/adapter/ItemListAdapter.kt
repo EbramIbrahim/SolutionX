@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import com.example.solutionx.data.Countries
+import com.example.solutionx.ModelShare
 import com.example.solutionx.databinding.ItemListBinding
 import com.example.solutionx.utils.Constant
 import com.example.solutionx.utils.Logger
 import com.example.solutionx.utils.LoggerType
 import java.util.Locale
 
-open class ItemListAdapter(private val countries: List<Countries>) :
+open class ItemListAdapter(private val countries: List<ModelShare>) :
     RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
 
     private var selectedItem = RecyclerView.NO_POSITION
@@ -20,7 +20,7 @@ open class ItemListAdapter(private val countries: List<Countries>) :
     inner class ItemViewHolder(private val binding: ItemListBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(countries: Countries, position: Int) {
+        fun bind(countries: ModelShare, position: Int) {
             countries.isSelected = position == selectedItem
             binding.root.setOnClickListener {
                 if (adapterPosition != RecyclerView.NO_POSITION) {
@@ -48,8 +48,12 @@ open class ItemListAdapter(private val countries: List<Countries>) :
     }
 
     // I can Inherit this method and apply different models with same layout
-    open fun onBind(countries: Countries, binding: ItemListBinding, isSelected: Boolean) {
-        binding.tvCountry.text = countries.name
+    open fun onBind(model: ModelShare, binding: ItemListBinding, isSelected: Boolean) {
+        binding.tvCountry.text = model.name
+        model.image?.let {
+            binding.countryIv.isVisible = true
+            binding.countryIv.setImageResource(it)
+        }
         val appLanguage = Locale.getDefault().language
         Logger.log(LoggerType.D(Constant.TAG, appLanguage))
 

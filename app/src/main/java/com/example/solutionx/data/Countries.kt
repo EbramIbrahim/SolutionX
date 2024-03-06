@@ -1,10 +1,17 @@
 package com.example.solutionx.data
 
-import com.example.solutionx.R
+import com.example.solutionx.ModelShare
 
 data class Countries(
-    val name: String,
-    val selectedColor: Int = R.color.selected_color,
-    val unSelectedColor: Int = R.color.default_color,
-    var isSelected: Boolean = false
-)
+    val countryName: String,
+    var isSelect: Boolean = false,
+    val countryImage: Int
+) : ModelShare {
+    override val name: String
+        get() = countryName
+
+    override var isSelected: Boolean = isSelect
+
+    override val image: Int
+        get() = countryImage
+}
