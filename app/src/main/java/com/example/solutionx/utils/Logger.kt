@@ -51,7 +51,7 @@ object Logger {
         }
     }
 
-    fun logToFile(logMessage: String) {
+    private fun logToFile(logMessage: String) {
         try {
             val file = File(
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),

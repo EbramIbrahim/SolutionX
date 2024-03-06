@@ -19,14 +19,8 @@ class FilterChild(private val filters: List<Countries>) : ItemListAdapter(filter
         val appLanguage = Locale.getDefault().language
         Logger.log(LoggerType.D(Constant.TAG, appLanguage))
 
-        if (appLanguage == "English"){
-            binding.tvCountry.setTextAppearance(R.style.english_font_style)
-        } else {
-            binding.tvCountry.setTextAppearance(R.style.arabic_font_style)
-        }
-
         if (isSelected) {
-            binding.tvCountry.setTextColor(Color.BLUE)
+            binding.tvCountry.setTextColor(Color.GREEN)
             binding.checkMark.isVisible = true
             binding.itemList.setBackgroundColor(Color.LTGRAY)
         } else {

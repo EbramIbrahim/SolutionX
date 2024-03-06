@@ -9,7 +9,6 @@ import com.example.solutionx.utils.Constant
 import com.example.solutionx.utils.Logger
 import com.example.solutionx.utils.LoggerType
 import com.example.solutionx.data.ModelsItem
-import com.example.solutionx.R
 import com.example.solutionx.databinding.ItemListBinding
 import java.util.Locale
 
@@ -18,6 +17,7 @@ class ModelsAdapter(
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var selectedItem = RecyclerView.NO_POSITION
+
 
     inner class CountriesViewHolder(private val binding: ItemListBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -31,12 +31,6 @@ class ModelsAdapter(
             binding.tvCountry.text = item.countries.name
             val appLanguage = Locale.getDefault().language
             Logger.log(LoggerType.D(Constant.TAG, appLanguage))
-
-            if (appLanguage == "English") {
-                binding.tvCountry.setTextAppearance(R.style.english_font_style)
-            } else {
-                binding.tvCountry.setTextAppearance(R.style.arabic_font_style)
-            }
 
             if (item.countries.isSelected) {
                 binding.tvCountry.setTextColor(Color.BLUE)
@@ -62,12 +56,6 @@ class ModelsAdapter(
             binding.tvCountry.text = item.countries.name
             val appLanguage = Locale.getDefault().language
             Logger.log(LoggerType.D(Constant.TAG, appLanguage))
-
-            if (appLanguage == "English") {
-                binding.tvCountry.setTextAppearance(R.style.english_font_style)
-            } else {
-                binding.tvCountry.setTextAppearance(R.style.arabic_font_style)
-            }
 
             if (item.countries.isSelected) {
                 binding.tvCountry.setTextColor(Color.GREEN)

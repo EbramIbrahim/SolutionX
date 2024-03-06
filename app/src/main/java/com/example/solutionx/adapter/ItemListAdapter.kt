@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import com.example.solutionx.R
 import com.example.solutionx.data.Countries
 import com.example.solutionx.databinding.ItemListBinding
 import com.example.solutionx.utils.Constant
@@ -53,12 +52,6 @@ open class ItemListAdapter(private val countries: List<Countries>) :
         binding.tvCountry.text = countries.name
         val appLanguage = Locale.getDefault().language
         Logger.log(LoggerType.D(Constant.TAG, appLanguage))
-
-        if (appLanguage == "English"){
-            binding.tvCountry.setTextAppearance(R.style.english_font_style)
-        } else {
-            binding.tvCountry.setTextAppearance(R.style.arabic_font_style)
-        }
 
         if (isSelected) {
             binding.tvCountry.setTextColor(Color.BLUE)

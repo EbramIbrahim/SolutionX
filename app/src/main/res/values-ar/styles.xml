@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
-
     <style name="font_style">
         <item name="android:textSize">26sp</item>
-        <item name="android:fontFamily">@font/galanogrotesquebold</item>
+        <item name="android:fontFamily">@font/tajawalbold</item>
     </style>
 
     <style name="regula_font_style">
         <item name="android:textSize">26sp</item>
-        <item name="android:fontFamily">@font/galanogrotesqueregular</item>
+        <item name="android:fontFamily">@font/tajawalregular</item>
     </style>
 
     <style name="mediumd_font_style">
         <item name="android:textSize">26sp</item>
-        <item name="android:fontFamily">@font/galanogrotesquemedium</item>
+        <item name="android:fontFamily">@font/tajawalmedium</item>
     </style>
-
 
 
 </resources>
