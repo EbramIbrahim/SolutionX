@@ -9,13 +9,8 @@
 
     <style name="font">
         <item name="android:font">@font/english_font</item>
+        <item name="android:textSize">26sp</item>
     </style>
 
-    <style name="font.bold_font">
-        <item name="android:font">@font/english_font</item>
-    </style>
 
-    <style name="font.regular_font">
-        <item name="android:font">@font/english_font</item>
-    </style>
 </resources>

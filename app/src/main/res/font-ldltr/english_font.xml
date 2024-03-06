@@ -8,12 +8,4 @@
         android:font="@font/galanogrotesquebold"
         android:fontWeight="400" />
 
-    <font
-        android:font="@font/galanogrotesquemedium"
-        android:fontWeight="400" />
-
-    <font
-        android:font="@font/galanogrotesqueregular"
-        android:fontWeight="400" />
-
 </font-family>
