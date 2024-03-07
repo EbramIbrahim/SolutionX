@@ -7,8 +7,8 @@
 
     <style name="Theme.SolutionX" parent="Base.Theme.SolutionX" />
 
-    <style name="font">
-        <item name="android:font">@font/english_font</item>
+    <style name="english_font_style">
+        <item name="android:fontFamily">@font/english_font</item>
         <item name="android:textSize">26sp</item>
     </style>
 
